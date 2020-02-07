@@ -8,6 +8,7 @@ import { reducer } from '@app/modules/home/store/state';
 import {HomeDataSource, HomeLocalDataSource} from './data-sources';
 import { HomeService } from '@app/modules/home/services';
 import { BestFoodsEffects } from '@app/modules/home/store/effects';
+import {SharedModule} from '@app/shared/shared.module';
 
 
 
@@ -22,6 +23,7 @@ import { BestFoodsEffects } from '@app/modules/home/store/effects';
     CommonModule,
     StoreModule.forRoot(reducer),
     EffectsModule.forRoot([BestFoodsEffects]),
+    SharedModule,
   ],
   providers: [
     HomeService,
