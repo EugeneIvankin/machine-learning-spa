@@ -1,1 +1,1 @@
-export * from './best-foods.effects';
+export * from './home.effects';

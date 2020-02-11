@@ -1,1 +1,1 @@
-export * from './best-foods.actions';
+export * from './home.actions';

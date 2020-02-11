@@ -1,16 +1,10 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {MainLayoutComponent} from '@app/shared/main-layout/main-layout.component';
+import {HomePageComponent} from '@app/modules/home/conteiners';
 
 const routes: Routes = [{
   path: '',
-  pathMatch: 'full',
-  component: MainLayoutComponent,
-  children: [
-    // { path: '', component: HeaderComponent, outlet: 'header' },
-    // { path: '', component: HomePageComponent, resolve: {data: LoaderResolver} },
-    // { path: '', component: ThickFooterComponent, outlet: 'footer' },
-  ]
+  component: HomePageComponent
 }];
 
 @NgModule({
@@ -18,5 +12,4 @@ const routes: Routes = [{
   exports: [RouterModule]
 })
 export class HomeRoutingModule {
-
 }

@@ -4,25 +4,29 @@ import { CommonModule } from '@angular/common';
 import { EffectsModule } from '@ngrx/effects';
 
 import { HomePageComponent } from '@app/modules/home/conteiners';
-import { reducer } from '@app/modules/home/store/state';
 import {HomeDataSource, HomeLocalDataSource} from './data-sources';
 import { HomeService } from '@app/modules/home/services';
-import { BestFoodsEffects } from '@app/modules/home/store/effects';
+import { HomeEffects } from '@app/modules/home/store/effects';
 import {SharedModule} from '@app/shared/shared.module';
-
-
+import {HomeRoutingModule} from '@app/modules/home/home-router.module';
+import {BannerComponent} from '@app/modules/home/components';
+import { reducer } from '@app/modules/home/store/reducers';
+import { DashboardComponent } from '@app/modules/home/components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
-    HomePageComponent
+    HomePageComponent,
+    BannerComponent,
+    DashboardComponent
   ],
   exports: [
     HomePageComponent
   ],
   imports: [
     CommonModule,
-    StoreModule.forRoot(reducer),
-    EffectsModule.forRoot([BestFoodsEffects]),
+    HomeRoutingModule,
+    StoreModule.forFeature('home', reducer),
+    EffectsModule.forFeature([HomeEffects]),
     SharedModule,
   ],
   providers: [
@@ -32,4 +36,4 @@ import {SharedModule} from '@app/shared/shared.module';
     }
   ]
 })
-export class HomeModule { }
+export class HomeModule {}

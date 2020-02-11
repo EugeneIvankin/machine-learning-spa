@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 
 import { restEndpoints } from '@consts';
 import { RestService } from '@core/services';
+import {Product} from '@app/shared/contracts/product';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,11 @@ import { RestService } from '@core/services';
 export class HomeDataSource {
   constructor(private restService: RestService) {}
 
-  public load(): Observable<any> {
-    return this.restService.post(restEndpoints.loadBestFoods);
+  public loadBestProducts(): Observable<Product[]> {
+    return this.restService.post(restEndpoints.loadBestProducts);
+  }
+
+  public search(food: string): Observable<any> {
+    return this.restService.post(restEndpoints.search);
   }
 }
