@@ -4,12 +4,12 @@ import { CommonModule } from '@angular/common';
 import { EffectsModule } from '@ngrx/effects';
 
 import { HomePageComponent } from '@app/modules/home/conteiners';
-import {HomeDataSource, HomeLocalDataSource} from './data-sources';
+import { HomeDataSource, HomeLocalDataSource } from './data-sources';
 import { HomeService } from '@app/modules/home/services';
 import { HomeEffects } from '@app/modules/home/store/effects';
-import {SharedModule} from '@app/shared/shared.module';
-import {HomeRoutingModule} from '@app/modules/home/home-router.module';
-import {BannerComponent} from '@app/modules/home/components';
+import { SharedModule } from '@app/shared/shared.module';
+import { HomeRoutingModule } from '@app/modules/home/home-router.module';
+import { BannerComponent } from '@app/modules/home/components';
 import { reducer } from '@app/modules/home/store/reducers';
 import { DashboardComponent } from '@app/modules/home/components/dashboard/dashboard.component';
 

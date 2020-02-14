@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {Product} from '@app/shared/contracts/product';
+import { routes } from '@consts';
 
 @Component({
   selector: 'app-food-card',
@@ -8,4 +9,5 @@ import {Product} from '@app/shared/contracts/product';
 })
 export class FoodCardComponent {
   @Input() product: Product;
+  public readonly routes: typeof routes = routes;
 }
