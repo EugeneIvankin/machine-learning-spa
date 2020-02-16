@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AppComponent } from './app.component';
 import { HomeModule } from './modules/home/home.module';
@@ -18,6 +19,9 @@ import {ProductDetailsModule} from '@app/modules/product-details/product-details
     HomeModule,
     SharedModule,
     ProductDetailsModule,
+    StoreDevtoolsModule.instrument({
+      maxAge: 10
+    }),
     AppRoutingModule,
   ],
   providers: [],
