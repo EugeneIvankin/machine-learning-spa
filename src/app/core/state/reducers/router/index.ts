@@ -1,18 +1,18 @@
 import {
   ROUTER_CANCEL,
-  ROUTER_ERROR,
-  ROUTER_NAVIGATED,
+  ROUTER_ERROR, ROUTER_NAVIGATED,
   ROUTER_NAVIGATION,
   RouterAction,
   SerializedRouterStateSnapshot
 } from '@ngrx/router-store';
 import routerAction from '@core/state/reducers/router/router-action';
+import {RouterHistory, RouterStateUrl} from '@core/contracts';
+import routerNavigated from '@core/state/reducers/router/router-navigated';
 
-class RouterStateUrl {
-}
 
 export interface RouterState {
   state: RouterStateUrl;
+  history: RouterHistory[];
 }
 
 export const initialState: RouterState = {
@@ -21,7 +21,8 @@ export const initialState: RouterState = {
     queryParams: {},
     params: {},
     data: {}
-  }
+  },
+  history: [],
 };
 
 export function reducer(
@@ -32,6 +33,9 @@ export function reducer(
     case ROUTER_NAVIGATION:
     case ROUTER_ERROR:
       return routerAction(state, action);
+
+    case ROUTER_NAVIGATED:
+      return routerNavigated(state, action);
 
     default: {
       return state;

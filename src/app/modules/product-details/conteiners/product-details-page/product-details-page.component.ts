@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {CoreState} from '@core/state/reducers';
 import {Store} from '@ngrx/store';
-import {select} from '@ngrx/core';
+import {select} from '@ngrx/store';
+import {getQueryParams} from '@core/state/selectors/router.selector';
 
 @Component({
   selector: 'app-product-details-page',
@@ -11,8 +12,7 @@ import {select} from '@ngrx/core';
 export class ProductDetailsPageComponent implements OnInit {
 
   constructor(private store: Store<CoreState>) {
-    this.store
-      .pipe();
+    this.store.pipe(select(getQueryParams)).subscribe((elem: any) => console.log(elem));
   }
 
   ngOnInit() {
