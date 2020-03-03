@@ -1,4 +1,5 @@
 export enum restEndpoints {
   loadBestProducts = '',
-  search = ''
+  search = '',
+  loadProduct = '',
 }

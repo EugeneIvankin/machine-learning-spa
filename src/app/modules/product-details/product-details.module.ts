@@ -8,6 +8,12 @@ import {
   SimirarProductsComponent
 } from '@app/modules/product-details/conteiners';
 import {ProductDetailsRouterModule} from '@app/modules/product-details/product-details-router.module';
+import {StoreModule} from '@ngrx/store';
+import {reducer} from '@app/modules/product-details/store/reducers';
+import {EffectsModule} from '@ngrx/effects';
+import {ProductDetailsEffects} from '@app/modules/product-details/store/effects';
+import {ProductDetailsService} from '@app/modules/product-details/services';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +24,13 @@ import {ProductDetailsRouterModule} from '@app/modules/product-details/product-d
   ],
   imports: [
     CommonModule,
-    ProductDetailsRouterModule
+    HttpClientModule,
+    ProductDetailsRouterModule,
+    StoreModule.forFeature('product details', reducer),
+    EffectsModule.forFeature([ProductDetailsEffects]),
+  ],
+  providers: [
+    ProductDetailsService
   ]
 })
 export class ProductDetailsModule { }
