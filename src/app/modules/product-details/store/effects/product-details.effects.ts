@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {Actions, Effect, ofType} from '@ngrx/effects';
 import {Observable, of} from 'rxjs';
 import {catchError, map, switchMap} from 'rxjs/operators';
+
 import {
   LoadProduct,
   LoadProductFailure,
@@ -9,6 +10,7 @@ import {
   ProductDetailsActionsTypes
 } from '@app/modules/product-details/store/actions';
 import {ProductDetailsService} from '@app/modules/product-details/services';
+import {LoadProductResponse} from '@app/modules/product-details/contracts';
 
 @Injectable()
 export class ProductDetailsEffects {
@@ -19,7 +21,7 @@ export class ProductDetailsEffects {
       this.productDetailsService
         .loadProduct(action.payload.pn)
         .pipe(
-          map((productDetails: any) => new LoadProductSuccess({productDetails})),
+          map((productDetails: LoadProductResponse) => new LoadProductSuccess({productDetails})),
           catchError((error: any) => of(new LoadProductFailure(error)))
         )
     )

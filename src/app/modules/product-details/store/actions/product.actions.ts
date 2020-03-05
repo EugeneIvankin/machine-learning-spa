@@ -17,7 +17,7 @@ export class LoadProductDetails implements Action {
 export class LoadProductDetailsSuccess implements Action {
   public readonly type: ProductActionsTypes = ProductActionsTypes.LoadProductDetailsSuccess;
 
-  constructor(public payload: { productDetails: ProductDetails}) {}
+  constructor(public payload: { productDetails: ProductDetails }) {}
 }
 
 export class LoadProductDetailsFailure implements Action {

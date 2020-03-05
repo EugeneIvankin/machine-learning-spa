@@ -1,4 +1,14 @@
-<p>product-details-page works!</p>
-<app-simirar-products></app-simirar-products>
-<app-featured-products></app-featured-products>
-<app-dishes></app-dishes>
+<div>
+  <h1>{{product.name}}</h1>
+  <h3>{{product.weight}}</h3>
+  <h3>{{product.packing}}</h3>
+  <h3>{{product.nutritionalValue}}</h3>
+  <h3>{{product.description}}</h3>
+  <h3>{{product.country}}</h3>
+  <h3>{{product.cost}}</h3>
+  <h3>{{product.image}}</h3>
+  <h3>{{product.pop}}</h3>
+</div>
+<app-similar-products [similarProducts]="similarProducts$ | async"></app-similar-products>
+<app-featured-products [featureProducts]="featureProducts$ | async"></app-featured-products>
+<app-dishes [dishes]="dishes$ | async"></app-dishes>

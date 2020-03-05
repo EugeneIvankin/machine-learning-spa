@@ -1,0 +1,6 @@
+<div *ngIf="dishes">
+  <h1>Dishes:</h1>
+  <div style="display: flex">
+    <app-food-card *ngFor="let dish of dishes" [product]="dish"></app-food-card>
+  </div>
+</div>

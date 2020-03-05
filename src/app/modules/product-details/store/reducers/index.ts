@@ -1,17 +1,25 @@
 import {createFeatureSelector, MemoizedSelector} from '@ngrx/store';
-import {ProductDetails} from '@app/shared/contracts/product-details';
-import {LoadProductSuccess, ProductDetailsActions, ProductDetailsActionsTypes} from '@app/modules/product-details/store/actions';
+
+import { ProductDetails } from '@app/shared/contracts/product-details';
+import { LoadProductSuccess, ProductDetailsActions, ProductDetailsActionsTypes } from '@app/modules/product-details/store/actions';
 import loadProduct from '@app/modules/product-details/store/reducers/load-product';
 import loadProductSuccess from '@app/modules/product-details/store/reducers/load-product-success';
 import loadProductFailure from '@app/modules/product-details/store/reducers/load-product-failure';
+import { Product } from '@app/shared/contracts/product';
 
 export interface ProductDetailsState {
   product: ProductDetails;
+  featureProducts: Product[];
+  similarProducts: Product[];
+  dishes: any[];
   pending: boolean;
 }
 
 export const initialState: ProductDetailsState = {
   product: null,
+  featureProducts: null,
+  similarProducts: null,
+  dishes: null,
   pending: null
 };
 
