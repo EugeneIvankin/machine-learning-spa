@@ -1,0 +1,6 @@
+.dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1270px;
+  justify-content: space-between;
+}
