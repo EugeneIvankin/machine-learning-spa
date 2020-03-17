@@ -1,3 +1,5 @@
 export enum routes {
-  PRODUCT_DETAILS = '/product-details'
+  HOME = '/',
+  PRODUCT_DETAILS = '/product-details',
+  SEARCH = '/search'
 }

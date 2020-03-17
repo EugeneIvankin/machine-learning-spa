@@ -15,6 +15,7 @@ import {
 import { HomeService } from '@app/modules/home/services';
 import { Product } from '@app/shared/contracts/product';
 import { HomeState } from '@app/modules/home/store/reducers';
+import { AppResponse } from '@core/contracts';
 
 @Injectable()
 export class HomeEffects {
@@ -25,7 +26,7 @@ export class HomeEffects {
       this.homeService
         .loadBestProducts()
         .pipe(
-          map((bestProducts: Product[]) => new LoadedBestProductsSuccess({products: bestProducts})),
+          map((response: AppResponse<Product[]>) => new LoadedBestProductsSuccess({products: response.payload})),
           catchError((error: any) => of(new LoadedBestProductsFailure(error)))
         )
     )
@@ -38,7 +39,7 @@ export class HomeEffects {
       this.homeService
         .search(action.payload.query)
         .pipe(
-          map((searchedProducts: Product[]) => new SearchedProductSuccess({products: searchedProducts})),
+          map((response: AppResponse<Product[]>) => new SearchedProductSuccess({products: response.payload})),
           catchError((error: any) => of(new SearchedProductFailure(error)))
         )
     )

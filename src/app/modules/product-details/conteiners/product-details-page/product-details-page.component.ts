@@ -10,7 +10,13 @@ import { getQueryParams } from '@core/state/selectors/router.selector';
 import { LoadProduct } from '@app/modules/product-details/store/actions';
 import { ProductDetails } from '@app/shared/contracts/product-details';
 import { Product } from '@app/shared/contracts/product';
-import { getDishes, getFeatureProducts, getProductDetails, getSimilarProducts } from '@app/modules/product-details/store/selectors';
+import {
+  getDishes,
+  getFeatureProducts,
+  getPending,
+  getProductDetails,
+  getSimilarProducts
+} from '@app/modules/product-details/store/selectors';
 import { ProductDetailsState } from '@app/modules/product-details/store/reducers';
 
 @Component({
@@ -23,6 +29,7 @@ export class ProductDetailsPageComponent {
   public featureProducts$: Observable<Product[]>;
   public similarProducts$: Observable<Product[]>;
   public dishes$: Observable<any>;
+  public pending$: Observable<boolean>;
 
   constructor(private store: Store<CoreState & ProductDetailsState>) {
     this.store
@@ -46,5 +53,7 @@ export class ProductDetailsPageComponent {
       .subscribe((product: ProductDetails) => {
         this.product = product;
       });
+
+    this.pending$ = this.store.pipe(select(getPending));
   }
 }

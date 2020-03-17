@@ -9,8 +9,11 @@ import { map } from 'rxjs/operators';
 export class RestService {
 
   constructor(private http: HttpClient) {
-    this.baseUrl = '';
+    this.baseUrl = 'http://localhost:3000/';
   }
+
+  // chrome.exe --user-data-dir="C://Chrome dev session" --disable-web-security
+
   protected baseUrl: string;
 
   protected httpOptions: object = {};

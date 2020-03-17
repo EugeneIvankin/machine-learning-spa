@@ -23,3 +23,9 @@ export const getDishes: MemoizedSelector<ProductDetailsState, any> = createSelec
   getProductDetailsState,
   (state: ProductDetailsState) => state.dishes
 );
+
+export const getPending: MemoizedSelector<ProductDetailsState, boolean> = createSelector(
+  getProductDetailsState,
+  (state: ProductDetailsState) => state.pending
+);
+

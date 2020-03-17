@@ -1,14 +1,20 @@
-<div>
-  <h1>{{product.name}}</h1>
-  <h3>{{product.weight}}</h3>
-  <h3>{{product.packing}}</h3>
-  <h3>{{product.nutritionalValue}}</h3>
-  <h3>{{product.description}}</h3>
-  <h3>{{product.country}}</h3>
-  <h3>{{product.cost}}</h3>
-  <h3>{{product.image}}</h3>
-  <h3>{{product.pop}}</h3>
+<div *ngIf="!(pending$ | async)">
+  <div>
+    <h1>{{product.name}}</h1>
+    <img [src]="product.image">
+    <h3>Вес: {{product.weight}}</h3>
+    <h3>Упаковка: {{product.packing}}</h3>
+    <ul>
+      <li *ngFor="let nutritionalValue of product.nutritionalValue">
+        <p>{{nutritionalValue.name}} {{nutritionalValue.value}}</p>
+      </li>
+    </ul>
+    <h3>Описание: {{product.description}}</h3>
+    <h3>Страна происхождения: {{product.country}}</h3>
+    <h3>Стоимость: {{product.cost}} руб.</h3>
+    <h3>Оценка: {{product.pop}}</h3>
+  </div>
+  <app-similar-products [similarProducts]="similarProducts$ | async"></app-similar-products>
+  <app-featured-products [featureProducts]="featureProducts$ | async"></app-featured-products>
+  <app-dishes [dishes]="dishes$ | async"></app-dishes>
 </div>
-<app-similar-products [similarProducts]="similarProducts$ | async"></app-similar-products>
-<app-featured-products [featureProducts]="featureProducts$ | async"></app-featured-products>
-<app-dishes [dishes]="dishes$ | async"></app-dishes>

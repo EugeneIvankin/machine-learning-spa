@@ -3,7 +3,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 
 import { HomeState } from '@app/modules/home/store/reducers';
-import { SearchProduct } from '@app/modules/home/store/actions';
+import { routes } from '@consts';
+import { CoreState } from '@core/state/reducers';
+import { Go } from '@core/state/actions';
 
 @Component({
   selector: 'app-header',
@@ -13,8 +15,9 @@ import { SearchProduct } from '@app/modules/home/store/actions';
 export class HeaderComponent implements OnInit {
   public minLength = 3;
   public form: FormGroup;
+  public readonly routes: typeof routes = routes;
 
-  constructor(private store: Store<HomeState>) { }
+  constructor(private store: Store<HomeState & CoreState>) { }
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -24,7 +27,7 @@ export class HeaderComponent implements OnInit {
 
   public search() {
     if (this.form.valid) {
-      this.store.dispatch(new SearchProduct(this.form.value.query));
+      this.store.dispatch(new Go({path: [routes.SEARCH], query: {productName: this.form.value.query}}));
     }
   }
 }

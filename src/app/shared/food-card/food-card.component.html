@@ -1,9 +1,12 @@
 <div class="card card-wrapper">
-  <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" class="card-img-top">
-  <div class="card-body">
+  <img [src]='product.image' class="card-img-top">
+  <div class="card-body" style="background-color: whitesmoke;">
     <h5 class="card-title">{{product.name}}</h5>
-    <p class="card-text">{{product.pop}}</p>
-    <p class="card-text">{{product.cost}}</p>
-    <a [routerLink]="routes.PRODUCT_DETAILS" [queryParams]="{pn: product.id}" class="btn btn-primary">Переход куда-нибудь</a>
+    <p class="card-text">Стоимость: {{product.cost}} руб.</p>
+    <p class="card-text">Оценка: {{product.pop}}</p>
+    <div style="display: flex; justify-content: space-between">
+      <a [routerLink]="routes.PRODUCT_DETAILS" [queryParams]="{pn: product.id}" class="btn btn-outline-primary">Пoдробнее...</a>
+      <a [routerLink]="routes.PRODUCT_DETAILS" [queryParams]="{pn: product.id}" class="btn btn-outline-success">Купить</a>
+    </div>
   </div>
 </div>

@@ -3,8 +3,8 @@ import { StoreModule } from '@ngrx/store';
 import { CommonModule } from '@angular/common';
 import { EffectsModule } from '@ngrx/effects';
 
-import { HomePageComponent } from '@app/modules/home/conteiners';
-import { HomeDataSource, HomeLocalDataSource } from './data-sources';
+import { HomePageComponent, SearchPageComponent } from '@app/modules/home/conteiners';
+import { HomeDataSource } from './data-sources';
 import { HomeService } from '@app/modules/home/services';
 import { HomeEffects } from '@app/modules/home/store/effects';
 import { SharedModule } from '@app/shared/shared.module';
@@ -17,7 +17,8 @@ import { DashboardComponent } from '@app/modules/home/components/dashboard/dashb
   declarations: [
     HomePageComponent,
     BannerComponent,
-    DashboardComponent
+    DashboardComponent,
+    SearchPageComponent
   ],
   exports: [
     HomePageComponent
@@ -31,9 +32,7 @@ import { DashboardComponent } from '@app/modules/home/components/dashboard/dashb
   ],
   providers: [
     HomeService,
-    {
-      provide: HomeDataSource, useClass: HomeLocalDataSource
-    }
+    HomeDataSource
   ]
 })
 export class HomeModule {}
