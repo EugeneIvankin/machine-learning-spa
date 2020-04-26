@@ -4,10 +4,11 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AppComponent } from './app.component';
 import { HomeModule } from './modules/home/home.module';
-import {AppRoutingModule} from '@app/app-routing.module';
-import {SharedModule} from '@app/shared/shared.module';
-import {CoreModule} from '@core/core.module';
-import {ProductDetailsModule} from '@app/modules/product-details/product-details.module';
+import { AppRoutingModule } from '@app/app-routing.module';
+import { SharedModule } from '@app/shared/shared.module';
+import { CoreModule } from '@core/core.module';
+import { ProductDetailsModule } from '@app/modules/product-details/product-details.module';
+import { PurchasesModule } from "@app/modules/purchases/purchases.module";
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import {ProductDetailsModule} from '@app/modules/product-details/product-details
     CoreModule,
     BrowserModule,
     HomeModule,
+    PurchasesModule,
     SharedModule,
     ProductDetailsModule,
     StoreDevtoolsModule.instrument({

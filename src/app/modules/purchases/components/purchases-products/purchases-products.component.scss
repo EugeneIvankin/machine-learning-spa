@@ -1,0 +1,12 @@
+.purchases-products-wrapper {
+  margin: 4vw;
+
+  &__title {
+    margin: 3vw;
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

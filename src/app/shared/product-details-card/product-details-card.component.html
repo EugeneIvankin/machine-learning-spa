@@ -1,0 +1,25 @@
+<div class="card card-wrapper">
+  <img [src]='product.image' class="card-img-top" alt="{{product.name}}">
+  <div class="card-body product-details-content">
+    <h5 class="card-title">{{product.name}}</h5>
+    <p class="card-text">Стоимость: {{product.cost}} руб.</p>
+    <p class="card-text">Оценка: {{product.pop}}</p>
+    <div class="d-flex justify-content-sm-between">
+      <a
+        [routerLink]="routes.PRODUCT_DETAILS"
+        [queryParams]="{pn: product.id}"
+        class="btn btn-outline-primary"
+      >Пoдробнее...</a>
+      <button
+        *ngIf="!isSelected"
+        class="btn btn-outline-success"
+        (click)="addToPurchases(product.id)"
+      >Купить</button>
+      <button
+        *ngIf="isSelected"
+        class="btn btn-outline-danger"
+        (click)="deletedFromPurchases(product.id)"
+      >Удалить</button>
+    </div>
+  </div>
+</div>

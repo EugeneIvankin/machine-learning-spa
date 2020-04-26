@@ -1,0 +1,24 @@
+<form class="login-page" [formGroup]="form" (ngSubmit)="login()">
+  <h1>Login</h1>
+  <div class="input-group mb-3">
+    <input
+      type="email"
+      class="form-control"
+      placeholder="Email"
+      aria-label="Email"
+      aria-describedby="basic-addon1"
+      formControlName="email"
+    >
+  </div>
+  <div class="input-group mb-3">
+    <input
+      type="password"
+      class="form-control"
+      placeholder="Password"
+      aria-label="Password"
+      aria-describedby="basic-addon1"
+      formControlName="password"
+    >
+  </div>
+  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+</form>

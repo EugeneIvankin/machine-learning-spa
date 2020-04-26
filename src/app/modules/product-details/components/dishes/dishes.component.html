@@ -1,6 +1,6 @@
-<div *ngIf="dishes">
-  <h1>Dishes:</h1>
-  <div style="display: flex">
-    <app-food-card *ngFor="let dish of dishes" [product]="dish"></app-food-card>
+<div *ngIf="dishes" class="dishes-wrapper">
+  <h1 class="dishes-wrapper__title">Dishes:</h1>
+  <div class="dishes-wrapper__content">
+    <app-product-details-card *ngFor="let dish of dishes" [product]="dish"></app-product-details-card>
   </div>
 </div>

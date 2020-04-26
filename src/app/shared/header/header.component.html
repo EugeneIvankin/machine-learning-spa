@@ -4,14 +4,35 @@
 
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       <form class="form-inline my-2 my-lg-0" [formGroup]="form" (ngSubmit)="search()">
-        <input
-          class="form-control mr-sm-2"
-          type="search"
-          placeholder="Найти продукт..."
-          formControlName="query"
-        >
+        <label>
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Найти продукт..."
+            formControlName="query"
+          >
+        </label>
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
       </form>
     </div>
+
+    <div *ngIf="user$ | async" class="auth-wrapper">
+      <fa-icon
+        class="auth-wrapper__purchases"
+        [routerLink]="routes.PURCHASES"
+        [icon]="faShoppingCart"
+        [size]="'1x'"
+      ></fa-icon>
+      <fa-icon
+        class="auth-wrapper__user"
+        [routerLink]="routes.USER"
+        [icon]="faUser"
+        [size]="'1x'"
+      ></fa-icon>
+    </div>
+
+    <a *ngIf="!(user$ | async)" [routerLink]="routes.LOGIN_SIGN">
+      <button class="btn btn-outline-info my-2 my-sm-0">Login / Sing Up</button>
+    </a>
   </nav>
 </header>

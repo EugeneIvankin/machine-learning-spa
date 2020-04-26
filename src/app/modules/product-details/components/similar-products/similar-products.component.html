@@ -1,4 +1,6 @@
-<h1>Similar Products:</h1>
-<div *ngIf="similarProducts" style="display: flex">
-  <app-food-card *ngFor="let product of similarProducts" [product]="product"></app-food-card>
+<div class="similar-products-wrapper">
+  <h1 class="similar-products-wrapper__title">Similar Products:</h1>
+  <div *ngIf="similarProducts" class="similar-products-wrapper__content">
+    <app-product-details-card *ngFor="let product of similarProducts" [product]="product"></app-product-details-card>
+  </div>
 </div>

@@ -1,18 +1,22 @@
 <div *ngIf="!(pending$ | async)">
-  <div>
-    <h1>{{product.name}}</h1>
-    <img [src]="product.image">
-    <h3>Вес: {{product.weight}}</h3>
-    <h3>Упаковка: {{product.packing}}</h3>
-    <ul>
-      <li *ngFor="let nutritionalValue of product.nutritionalValue">
-        <p>{{nutritionalValue.name}} {{nutritionalValue.value}}</p>
-      </li>
-    </ul>
-    <h3>Описание: {{product.description}}</h3>
-    <h3>Страна происхождения: {{product.country}}</h3>
-    <h3>Стоимость: {{product.cost}} руб.</h3>
-    <h3>Оценка: {{product.pop}}</h3>
+  <div class="product-wrapper">
+    <div class="product-wrapper__img-wrapper">
+      <img [src]="product.image" class="product-wrapper__img-wrapper__img" alt="{{product.name}}">
+    </div>
+    <div class="product-wrapper__content">
+      <h1>{{product.name}}</h1>
+      <h3>Вес: {{product.weight}}</h3>
+      <h3>Упаковка: {{product.packing}}</h3>
+      <ul>
+        <li *ngFor="let nutritionalValue of product.nutritionalValue">
+          <p>{{nutritionalValue.name}} {{nutritionalValue.value}}</p>
+        </li>
+      </ul>
+      <h3>Описание: {{product.description}}</h3>
+      <h3>Страна происхождения: {{product.country}}</h3>
+      <h3>Стоимость: {{product.cost}} руб.</h3>
+      <h3>Оценка: {{product.pop}}</h3>
+    </div>
   </div>
   <app-similar-products [similarProducts]="similarProducts$ | async"></app-similar-products>
   <app-featured-products [featureProducts]="featureProducts$ | async"></app-featured-products>

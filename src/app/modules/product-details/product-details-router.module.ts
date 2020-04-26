@@ -1,5 +1,5 @@
-import {RouterModule, Routes} from '@angular/router';
-import {NgModule} from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
 
 import {ProductDetailsPageComponent} from '@app/modules/product-details/conteiners/product-details-page/product-details-page.component';
 

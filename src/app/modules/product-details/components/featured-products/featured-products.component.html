@@ -1,4 +1,6 @@
-<h1>Feature Products:</h1>
-<div *ngIf="featureProducts" style="display: flex">
-  <app-food-card *ngFor="let product of featureProducts" [product]="product"></app-food-card>
+<div class="featured-products-wrapper">
+  <h1 class="featured-products-wrapper__title">Feature Products:</h1>
+  <div *ngIf="featureProducts" class="featured-products-wrapper__content">
+    <app-product-details-card *ngFor="let product of featureProducts" [product]="product"></app-product-details-card>
+  </div>
 </div>

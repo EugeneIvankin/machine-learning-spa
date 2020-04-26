@@ -28,4 +28,3 @@ export const getPending: MemoizedSelector<ProductDetailsState, boolean> = create
   getProductDetailsState,
   (state: ProductDetailsState) => state.pending
 );
-

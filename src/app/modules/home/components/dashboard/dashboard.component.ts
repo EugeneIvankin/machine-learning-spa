@@ -1,18 +1,12 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, Input } from '@angular/core';
 
-import {Product} from '@app/shared/contracts/product';
+import { Product } from '@app/shared/contracts/product';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent {
   @Input() products: Product[];
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
 }

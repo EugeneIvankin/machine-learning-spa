@@ -22,7 +22,7 @@ import { ProductDetailsState } from '@app/modules/product-details/store/reducers
 @Component({
   selector: 'app-product-details-page',
   templateUrl: './product-details-page.component.html',
-  styleUrls: ['./product-details-page.component.css']
+  styleUrls: ['./product-details-page.component.scss']
 })
 export class ProductDetailsPageComponent {
   public product: ProductDetails;

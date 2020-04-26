@@ -1,0 +1,18 @@
+.auth-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  &__purchases {
+    margin: 1vw;
+    cursor: pointer;
+    color: greenyellow
+  }
+
+  &__user {
+    margin: 1vw;
+    cursor: pointer;
+    color: dodgerblue;
+  }
+}
+

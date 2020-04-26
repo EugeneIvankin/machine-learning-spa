@@ -1,0 +1,56 @@
+<form class="sign-page" [formGroup]="form" (ngSubmit)="sign()">
+  <h1>Sign Up</h1>
+
+  <div class="input-group mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Name"
+      aria-label="Name"
+      aria-describedby="basic-addon1"
+      formControlName="name"
+    >
+  </div>
+  <div class="input-group mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Last Name"
+      aria-label="Last Name"
+      aria-describedby="basic-addon1"
+      formControlName="lastName"
+    >
+  </div>
+  <div class="input-group mb-3">
+    <input
+      type="email"
+      class="form-control"
+      placeholder="Email"
+      aria-label="Email"
+      aria-describedby="basic-addon1"
+      formControlName="email"
+    >
+  </div>
+  <div class="input-group mb-3">
+    <input
+      type="password"
+      class="form-control"
+      placeholder="Password"
+      aria-label="Password"
+      aria-describedby="basic-addon1"
+      formControlName="password"
+    >
+  </div>
+  <div class="input-group mb-3">
+    <input
+      type="tel"
+      class="form-control"
+      placeholder="Phone"
+      aria-label="Phone"
+      aria-describedby="basic-addon1"
+      formControlName="phone"
+    >
+  </div>
+
+  <button class="btn btn-outline-success my-2 my-sm-0">Sign Up</button>
+</form>

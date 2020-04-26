@@ -1,0 +1,11 @@
+<div class="purchases-products-wrapper">
+  <h1 class="purchases-products-wrapper__title">Purchased Products:</h1>
+  <div *ngIf="purchasedProducts" class="purchases-products-wrapper__content">
+    <app-product-details-card
+      *ngFor="let product of purchasedProducts"
+      [product]="product"
+      [isSelected]="true"
+    ></app-product-details-card>
+  </div>
+</div>
+

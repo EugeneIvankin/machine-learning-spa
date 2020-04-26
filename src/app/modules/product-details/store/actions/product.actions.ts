@@ -3,10 +3,10 @@ import { Action } from '@ngrx/store';
 import { ProductDetails } from '@app/shared/contracts/product-details';
 
 export enum ProductActionsTypes {
-    LoadProductDetails = '[Home] Load Product Details',
-    LoadProductDetailsSuccess = '[Home] Loaded Product Details Success',
-    LoadProductDetailsFailure = '[Home] Loaded Product Details Failure'
-  }
+  LoadProductDetails = '[Home] Load Product Details',
+  LoadProductDetailsSuccess = '[Home] Loaded Product Details Success',
+  LoadProductDetailsFailure = '[Home] Loaded Product Details Failure'
+}
 
 export class LoadProductDetails implements Action {
   public readonly type: ProductActionsTypes = ProductActionsTypes.LoadProductDetails;

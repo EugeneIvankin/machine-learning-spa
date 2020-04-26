@@ -1,0 +1,13 @@
+.dishes-wrapper {
+  margin: 4vw;
+}
+
+.dishes-wrapper__title {
+  margin: 3vw;
+}
+
+.dishes-wrapper__content {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1270px;
+}

@@ -1,28 +1,29 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FoodCardComponent } from './food-card/food-card.component';
-import { MainLayoutComponent } from './main-layout/main-layout.component';
-import { HeaderComponent } from './header/header.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+
 import { FooterComponent } from './footer/footer.component';
-import {ReactiveFormsModule} from '@angular/forms';
-import {RouterModule} from '@angular/router';
+import { HeaderComponent } from './header/header.component';
+import { ProductDetailsCardComponent } from './product-details-card/product-details-card.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
-    FoodCardComponent,
-    MainLayoutComponent,
+    ProductDetailsCardComponent,
     HeaderComponent,
     FooterComponent
   ],
   exports: [
-    FoodCardComponent,
+    ProductDetailsCardComponent,
     HeaderComponent,
     FooterComponent
   ],
-    imports: [
-        CommonModule,
-        ReactiveFormsModule,
-        RouterModule
-    ]
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    RouterModule,
+    FontAwesomeModule
+  ]
 })
 export class SharedModule { }
